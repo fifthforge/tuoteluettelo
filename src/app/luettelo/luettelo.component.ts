@@ -11,17 +11,37 @@ import phones from '../../assets/phones/phones.json';
 export class LuetteloComponent implements OnInit {
   title = 'json-file-read-angular';
   phones = phones;
-  cheese = "yes"
+  alphaPhones : any;
 
   searchTerm : string = "";
+  sorts : string[] = ["newest first" ,"alphabetical"]
 
   faCoffee = faCoffee;
 
+  selectedValue : any;
+  
   constructor() {
-    console.log(phones);
+    console.log(phones[0]);
+    
   }
 
   ngOnInit(): void {
   }
+
+  selectedSort: string = '';
+
+  //event handler for the select element's change event
+  selectChangeHandler (event: any) {
+    //update the ui
+    this.selectedSort = event.target.value;
+    console.log(this.selectedSort)
+    if (this.selectedSort == "alphabetical") {
+      this.phones.sort((a,b) => a.name > b.name ? 1 : -1)
+    } 
+    if (this.selectedSort == "newest first") {
+      this.phones.sort((a,b) => a.age-b.age)
+    }
+  }
+  
 
 }

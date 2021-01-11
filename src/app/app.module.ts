@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LuetteloComponent } from './luettelo/luettelo.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import {NgPipesModule} from 'ngx-pipes';
 
 
 
@@ -17,7 +18,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     BrowserModule,
     FontAwesomeModule,
     FormsModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    NgPipesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
