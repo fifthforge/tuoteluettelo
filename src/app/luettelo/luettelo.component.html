@@ -1,25 +1,27 @@
-<nav>
-    <p [class.supaDupa]="true">Search</p>
-    <input [(ngModel)]="searchTerm" type="text" name="" id="">
-    <p>Sort by:</p>
+<section class="mainFlex">
+    <nav>
+        <p>Search</p>
+        <input [(ngModel)]="searchTerm" type="text" name="" id="">
+        <p>Sort by:</p>
 
-    <select (change)="selectChangeHandler($event)">
-        <option *ngFor="let sort of sorts" value="{{sort}}">{{sort}}</option>
-    </select>
-</nav>
+        <select (change)="selectChangeHandler($event)">
+            <option *ngFor="let sort of sorts" value="{{sort}}">{{sort}}</option>
+        </select>
+    </nav>
 
-<main>
-    <ul>
-        <li class="container" style="margin: 1rem;" *ngFor="let phone of phones | filter:searchTerm">
-            <div class="row">
-                <figure class="col-">
-                    <img src="../../assets/{{phone.imageUrl}}" alt="">
-                </figure>
-                <section class="col-sm">
-                    <p style="color:blue; padding: 0; margin: 0;">{{phone.name}}</p>
-                    <p>{{phone.snippet}}</p>
-                </section>
-            </div>
-        </li>
-    </ul>
-</main>
+    <main>
+        <ul>
+            <li (click)="goToInfo(phone)" routerLink="/valittu" class="container" style="margin: 1rem;" *ngFor="let phone of phones | filter:searchTerm">
+                <div class="row">
+                    <figure class="col-">
+                        <img src="../../assets/{{phone.imageUrl}}" alt="">
+                    </figure>
+                    <section class="col-sm">
+                        <p style="color:blue; padding: 0; margin: 0;">{{phone.name}}</p>
+                        <p>{{phone.snippet}}</p>
+                    </section>
+                </div>
+            </li>
+        </ul>
+    </main>
+</section>

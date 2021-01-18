@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { PhoneServiceService as PhoneService } from '../phone-service.service'; 
 
 import phones from '../../assets/phones/phones.json';
 
@@ -11,37 +11,35 @@ import phones from '../../assets/phones/phones.json';
 export class LuetteloComponent implements OnInit {
   title = 'json-file-read-angular';
   phones = phones;
-  alphaPhones : any;
 
-  searchTerm : string = "";
-  sorts : string[] = ["newest first" ,"alphabetical"]
+  searchTerm: string = "";
+  sorts: string[] = ["newest first", "alphabetical"]
 
-  faCoffee = faCoffee;
+  constructor(private data : PhoneService) {
+  }
 
-  selectedValue : any;
-  
-  constructor() {
-    console.log(phones[0]);
-    
+  chosenPhoneID: string;
+  goToInfo(phone) {
+      this.data.changeMessage(phone.id); 
   }
 
   ngOnInit(): void {
+    this.data.currentMessage.subscribe(message => this.chosenPhoneID = message); 
   }
 
   selectedSort: string = '';
 
-  //event handler for the select element's change event
-  selectChangeHandler (event: any) {
-    //update the ui
+  selectChangeHandler(event: any) {
+
     this.selectedSort = event.target.value;
-    console.log(this.selectedSort)
+
     if (this.selectedSort == "alphabetical") {
-      this.phones.sort((a,b) => a.name > b.name ? 1 : -1)
-    } 
+      this.phones.sort((a, b) => a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1)
+    }
     if (this.selectedSort == "newest first") {
-      this.phones.sort((a,b) => a.age-b.age)
+      this.phones.sort((a, b) => a.age - b.age)
     }
   }
-  
+
 
 }

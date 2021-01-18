@@ -1,0 +1,61 @@
+<main>
+    <div class="container">
+        <div class="row">
+            <figure class="col-sm firstImg">
+                <img src="../../assets/{{MainImage}}" alt="">
+            </figure>
+            <div class="col-sm">
+                <div class="col">
+                    <figure class="firstImgX">
+                        <img src="../../assets/{{MainImage}}" alt="">
+                    </figure>
+                    <h1>{{name}}</h1>
+                    <p>{{description}}</p>
+                </div>
+                <div class="col pienKuva">
+                    <div class="row">
+                        <figure class="col-sm" *ngIf="Images[0]">
+                            <img src="../../assets/{{Images[0]}}" alt="0" (click)="changeMainPicture($event)">
+                        </figure>
+                        <figure class="col-sm" *ngIf="Images[1]">
+                            <img src="../../assets/{{Images[1]}}" alt="1" (click)="changeMainPicture($event)">
+                        </figure>
+                        <figure class="col-sm" *ngIf="Images[2]">
+                            <img src="../../assets/{{Images[2]}}" alt="2" (click)="changeMainPicture($event)">
+                        </figure>
+
+                    </div>
+                    <div class="row">
+                        <figure class="col-sm" *ngIf="Images[3]">
+                            <img src="../../assets/{{Images[3]}}" alt="">
+                        </figure>
+                        <figure class="col-sm" *ngIf="Images[4]">
+                            <img src="../../assets/{{Images[4]}}" alt="">
+                        </figure>
+                        <figure class="col-sm" *ngIf="Images[5]">
+                            <img src="../../assets/{{Images[5]}}" alt="">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row alaInfo">
+            <div class="col-sm">
+                <h2>Availability and Networks</h2>
+                <p *ngFor="let Av of AvailabilityK; index as i; count as c"> <span>{{AvailabilityV[i]}}</span><br *ngIf="AvailabilityV[i].toString()"></p>
+            </div>
+            <div class="col-sm">
+                <h2>Battery</h2>
+                <p *ngFor="let Bat of BatteryK; index as i; count as c"><b *ngIf="BatteryV[i].toString()">{{Bat}}</b> <br *ngIf="BatteryV[i].toString()"> <span>{{BatteryV[i]}}</span></p>
+            </div>
+            <div class="col-sm">
+                <h2>Storage and Memory</h2>
+                <p *ngFor="let SnM of StorageMemoryK; index as i; count as c"><b *ngIf="StorageMemoryV[i].toString()">{{SnM}}</b> <br *ngIf="StorageMemoryV[i].toString()"> <span>{{StorageMemoryV[i]}}</span></p>
+            </div>
+            <div class="col-sm">
+                <h2>Connectivity</h2>
+                <p *ngFor="let Con of ConnectivityK; index as i; count as c"><b *ngIf="ConnectivityV[i].toString()">{{Con}}</b> <br *ngIf="ConnectivityV[i].toString()"> <span>{{ConnectivityV[i]}}</span></p>
+            </div>
+        </div>
+    </div>
+</main>

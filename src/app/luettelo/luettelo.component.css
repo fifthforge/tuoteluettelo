@@ -1,3 +1,9 @@
+.mainFlex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
 .row {
     display: flex;
     flex-direction: row;
@@ -29,9 +35,8 @@ section {
 }
 
 nav {
-    position: fixed;
-    left: 3rem;
-    top: 3rem;
+    padding: 1rem;
+    margin: 1rem;
 }
 
 nav>* {

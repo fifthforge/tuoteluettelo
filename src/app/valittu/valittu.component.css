@@ -1,0 +1,89 @@
+.pienKuva figure img {
+    max-width: 100%;
+    padding: 1rem;
+    border: black solid 1px;
+}
+
+figure img {
+    max-width: 100%;
+}
+
+.alaInfo {
+    text-align: left;
+    float: left;
+}
+
+h1 {
+    border-bottom: 2px rgb(199, 199, 199) solid;
+    padding: 0.5rem;
+    font-size: 1.8rem;
+}
+
+h2 {
+    font-size: 1rem;
+    padding: 0;
+    margin: 0 0 0.2rem 0;
+}
+
+.pienKuva img {
+    cursor: pointer;
+
+}
+
+.alaInfo p {
+    font-size: 0.8rem;
+    padding: 0;
+    margin: 0;
+
+}
+
+.alaInfo>* {
+    padding: 3rem;
+}
+
+main {
+    max-width: 960px;
+    margin: 2rem auto;
+}
+
+@media screen and (max-width: 769px) {
+    .pienKuva figure img {
+        border: none;
+        border-bottom: black solid 1px;
+    }
+
+    * {
+        text-align: center;
+    }
+
+    h1 {
+        padding-bottom: 0.5rem;
+    }
+
+    .alaInfo>* {
+        padding: 0.4rem;
+        border-bottom: 1px black solid;
+    }
+
+    .pienKuva img {
+        cursor: default;
+    }
+
+    .firstImg {
+        display: none;
+    }
+
+
+}
+
+@media screen and (min-width: 768px) {
+    .firstImgX {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 573px) {
+    .firstImgX {
+        display: none;
+    }
+}
