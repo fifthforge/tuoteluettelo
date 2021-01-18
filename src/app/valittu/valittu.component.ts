@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PhoneServiceService as PhoneService } from '../phone-service.service'; 
+import { ActivatedRoute } from '@angular/router';
 
 import phones1 from '../../assets/phones/dell-streak-7.json';
 import phones2 from '../../assets/phones/dell-venue.json';
@@ -50,7 +51,7 @@ export class ValittuComponent implements OnInit {
     this.MainImage = this.phones.images[$event.target.alt];
     }
 
-  constructor(private data : PhoneService) { }
+  constructor(private data : PhoneService) {}
 
   chosenPhoneID : string;
   ngOnInit(): void {
