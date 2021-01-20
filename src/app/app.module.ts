@@ -8,6 +8,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import {NgPipesModule} from 'ngx-pipes';
 import { ValittuComponent } from './valittu/valittu.component';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -20,14 +21,15 @@ import { RouterModule } from '@angular/router';
     BrowserModule,
     RouterModule.forRoot([
       {path: 'luettelo', component: LuetteloComponent},
-      {path: 'valittu', component: ValittuComponent},
+      {path: 'luettelo/:id', component: ValittuComponent},
       {path: '', redirectTo: '/luettelo', pathMatch: 'full'},
       {path: '**', redirectTo: '/luettelo'}
     ]),
     FontAwesomeModule,
     FormsModule,
     Ng2SearchPipeModule,
-    NgPipesModule
+    NgPipesModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

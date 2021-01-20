@@ -11,7 +11,7 @@
 
     <main>
         <ul>
-            <li (click)="goToInfo(phone)" routerLink="/valittu" class="container" style="margin: 1rem;" *ngFor="let phone of phones | filter:searchTerm">
+            <li (click)="goToInfo(phone)" routerLink="/luettelo/{{phone.id}}" class="container" style="margin: 1rem;" *ngFor="let phone of phones | filter:searchTerm">
                 <div class="row">
                     <figure class="col-">
                         <img src="/assets/{{phone.imageUrl}}" alt="">
