@@ -11,7 +11,7 @@ import phones1 from '../../assets/phones/dell-streak-7.json';
 })
 export class ValittuComponent implements OnInit {
   phones = phones1;
-  dataArray : string[];
+
   description = this.phones.description;
   name = this.phones.name;
   Images = this.phones.images;
@@ -24,6 +24,7 @@ export class ValittuComponent implements OnInit {
   StorageMemoryV = Object.values(this.phones.storage);
   ConnectivityK = Object.keys(this.phones.connectivity);
   ConnectivityV = Object.values(this.phones.connectivity);
+  
 
   changeMainPicture($event) {
     this.MainImage = this.phones.images[$event.target.alt];
@@ -48,9 +49,8 @@ export class ValittuComponent implements OnInit {
       this.ConnectivityK = Object.keys(this.phones.connectivity);
       this.ConnectivityV = Object.values(this.phones.connectivity);
     })
-    
   }
 
-  ngOnInit(): void {} 
-
+  ngOnInit(): void {
+  } 
 }

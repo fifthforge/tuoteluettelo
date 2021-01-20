@@ -2,6 +2,7 @@
     max-width: 100%;
     padding: 1rem;
     border: black solid 1px;
+    max-width: 120px;
 }
 
 figure img {
@@ -50,6 +51,7 @@ main {
     .pienKuva figure img {
         border: none;
         border-bottom: black solid 1px;
+        max-width: 100%;
     }
 
     * {
