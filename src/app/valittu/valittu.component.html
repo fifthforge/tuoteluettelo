@@ -1,4 +1,4 @@
-<main>
+<main *ngIf="LoadingCompleted">
     <div class="container">
         <div class="row">
             <figure class="col-sm firstImg">
@@ -9,31 +9,31 @@
                     <figure class="firstImgX">
                         <img src="assets/{{MainImage}}" alt="">
                     </figure>
-                    <h1>{{name}}</h1>
-                    <p>{{description}}</p>
+                    <h1>{{phoneData.name}}</h1>
+                    <p>{{phoneData.description}}</p>
                 </div>
                 <div class="col pienKuva">
                     <div class="row">
-                        <figure class="col-sm" *ngIf="Images[0]">
-                            <img src="assets/{{Images[0]}}" alt="0" (click)="changeMainPicture($event)">
+                        <figure class="col-sm" *ngIf="phoneData.images[0]">
+                            <img src="assets/{{phoneData.images[0]}}" alt="0" (click)="changeMainPicture($event)">
                         </figure>
-                        <figure class="col-sm" *ngIf="Images[1]">
-                            <img src="assets/{{Images[1]}}" alt="1" (click)="changeMainPicture($event)">
+                        <figure class="col-sm" *ngIf="phoneData.images[1]">
+                            <img src="assets/{{phoneData.images[1]}}" alt="1" (click)="changeMainPicture($event)">
                         </figure>
-                        <figure class="col-sm" *ngIf="Images[2]">
-                            <img src="assets/{{Images[2]}}" alt="2" (click)="changeMainPicture($event)">
+                        <figure class="col-sm" *ngIf="phoneData.images[2]">
+                            <img src="assets/{{phoneData.images[2]}}" alt="2" (click)="changeMainPicture($event)">
                         </figure>
 
                     </div>
                     <div class="row">
-                        <figure class="col-sm" *ngIf="Images[3]">
-                            <img src="assets/{{Images[3]}}" alt="3" (click)="changeMainPicture($event)">
+                        <figure class="col-sm" *ngIf="phoneData.images[3]">
+                            <img src="assets/{{phoneData.images[3]}}" alt="3" (click)="changeMainPicture($event)">
                         </figure>
-                        <figure class="col-sm" *ngIf="Images[4]">
-                            <img src="assets/{{Images[4]}}" alt="4" (click)="changeMainPicture($event)">
+                        <figure class="col-sm" *ngIf="phoneData.images[4]">
+                            <img src="assets/{{phoneData.images[4]}}" alt="4" (click)="changeMainPicture($event)">
                         </figure>
-                        <figure class="col-sm" *ngIf="Images[5]">
-                            <img src="assets/{{Images[5]}}" alt="5" (click)="changeMainPicture($event)">
+                        <figure class="col-sm" *ngIf="phoneData.images[5]">
+                            <img src="assets/{{phoneData.images[5]}}" alt="5" (click)="changeMainPicture($event)">
                         </figure>
                     </div>
                 </div>
